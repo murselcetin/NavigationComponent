@@ -19,7 +19,13 @@ class AnasayfaFragment : Fragment() {
         tasarim = FragmentAnasayfaBinding.inflate(inflater, container, false)
 
         tasarim.buttonBasla.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.oyunEkraninaGecis)
+
+            val gecis = AnasayfaFragmentDirections.oyunEkraninaGecis(
+                ad = "Ahmet",
+                yas = 23,
+                boy = 1.78f,
+                bekar = true, nesne = Kisiler("Mehmet",34,1.98f,false))
+            Navigation.findNavController(it).navigate(gecis)
         }
 
         return tasarim.root
